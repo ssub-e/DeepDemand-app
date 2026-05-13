@@ -1,6 +1,8 @@
 /**
  * @file src/App.tsx
- * @description Root application component handling global routing and conditional redirection based on onboarding status.
+ * @description Root application component handling global routing.
+ * Landing page sits at '/' as the customer hook layer.
+ * Onboarding and Dashboard are accessed via CTA navigation.
  */
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
@@ -10,11 +12,12 @@ import Analytics from "./pages/Analytics"
 import Settings from "./pages/Settings"
 import Admin from "./pages/Admin"
 import Onboarding from "./pages/Onboarding"
+import LandingPage from "./pages/LandingPage"
 import { useAppContext } from "./contexts/AppContext"
 
 /**
  * Main App Component
- * Defines the application's routing structure and protected route logic.
+ * Landing → Onboarding → Dashboard flow
  */
 function App() {
   const { isOnboardingCompleted } = useAppContext()
@@ -22,13 +25,16 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Landing page (customer hook) */}
+        <Route path="/" element={<LandingPage />} />
+        
         {/* Onboarding flow (standalone page) */}
         <Route path="/onboarding" element={<Onboarding />} />
         
         {/* Protected routes wrapped in MainLayout */}
         <Route element={<MainLayout />}>
           <Route 
-            path="/" 
+            path="/app" 
             element={<Navigate to={isOnboardingCompleted ? "/dashboard" : "/onboarding"} replace />} 
           />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -42,3 +48,4 @@ function App() {
 }
 
 export default App
+
