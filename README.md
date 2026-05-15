@@ -15,22 +15,22 @@ npm run dev
 npm run build
 ```
 
-## 🌐 Landing Page
+## 🌐 랜딩페이지 (Landing Page)
 
-The project includes a **customer-facing landing page** at `/` designed to maximize user acquisition:
+DeepDemand의 랜딩페이지는 고객 획득을 위한 강력한 후킹 레이어로 설계되었습니다 (`/` 경로):
 
-- **Hero Section** — "Stop Guessing Demand. Start Predicting It." with AI-powered background visuals
-- **How It Works** — 3-step Input-Output diagram (Connect → AI Engine → Predictions)
-- **Value Proposition** — Benefit-driven cards (Forecast, Explainability, Overstock Reduction)
-- **Outcome Showcase** — Dashboard preview with feature highlights
-- **ROI Comparison** — Before/After metrics (72hrs → 4hrs planning, ±35% → ±8% error)
-- **Social Proof** — Key performance metrics with animated counters
+- **히어로 섹션** — "엑셀 4시간, 반려 5회, 손실 80만원. 이제 AI가 끝내겠습니다."
+- **페인 포인트** — 이커머스 MD와 3PL 센터장의 실질적인 고충(엑셀 지옥, 품절 징계, 인건비 손실) 소구
+- **핵심 솔루션** — **결재 방어용 XAI 리포트** 및 **1-Click 인건비 옵티마이저**
+- **페르소나 여정(CJM)** — [김아름 MD]와 [정동환 센터장]의 페르소나별 도입 스토리텔링
+- **기대 효과(ROI)** — 4시간 업무를 10분으로 단축, 예측 오차 ±35%에서 ±8%로 개선
+- **3단계 CTA** — 사전 예약, 알림 설정, 대기 리스트 등록의 다각적 전환 유도
 
-**Strategy:** C-type (Result-Oriented) landing page per the Landing Page Enhancement Framework.
+**전략:** 비즈니스 핵심 가치와 페르소나 JTBD를 반영한 결과 중심(C-type) 랜딩페이지.
 
-### Route Flow
+### 서비스 흐름
 ```
-/ (Landing Page) → CTA → /onboarding → /dashboard
+/ (랜딩페이지) → CTA 클릭 → /onboarding (온보딩) → /dashboard (대시보드)
 ```
 
 > 📄 See [`docs/landing_checklist.md`](docs/landing_checklist.md) for the full evaluation checklist.
